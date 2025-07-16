@@ -12,9 +12,9 @@ SELECT TOP 20000
   gaia_source.bp_rp,
   -0.4 * (
     gaiadr3.gaia_source.phot_bp_mean_mag 
-    - 18.493      -- DM from Pietrzynski+13 
-    - 0.5*1.002   -- A_V Zaritsky+04 to GBP (WC19)
-    - 4.74        -- Solar Absolute magnitude
+    - 18.493                                -- DM from Pietrzynski+2013 
+    - 0.5*1.002                             -- A_V Zaritsky+04 to GBP (Wang&Chen,2019)
+    - 4.74                                  -- Solar Absolute magnitude
     + (
       0.2547454 
       + 2.5632543 * (gaiadr3.gaia_source.phot_bp_mean_mag - gaiadr3.gaia_source.phot_rp_mean_mag - 0.5*0.41)
@@ -32,11 +32,11 @@ WHERE
   AND gaiadr3.gaia_source.parallax < 0.1
   AND gaiadr3.gaia_source.phot_bp_mean_mag < 17
   AND gaiadr3.gaia_source.bp_rp < 2.25
-  AND -0.4 * (
+  AND -0.4 * (                              -- we have to copy the formula we used to calculate logL_abel
     gaiadr3.gaia_source.phot_bp_mean_mag 
-    - 18.493      -- DM from Pietrzynski+13 
-    - 0.5*1.002   -- A_V Zaritsky+04 to GBP (WC19)
-    - 4.74        -- Solar Absolute magnitude
+    - 18.493       
+    - 0.5*1.002   
+    - 4.74        
     + (
       0.2547454 
       + 2.5632543 * (gaiadr3.gaia_source.phot_bp_mean_mag - gaiadr3.gaia_source.phot_rp_mean_mag - 0.5*0.41)
