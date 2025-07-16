@@ -44,4 +44,4 @@ WHERE
       + 2.9441443 * POWER((gaiadr3.gaia_source.phot_bp_mean_mag - gaiadr3.gaia_source.phot_rp_mean_mag - 0.5*0.41), 3)
       - 0.6093457 * POWER((gaiadr3.gaia_source.phot_bp_mean_mag - gaiadr3.gaia_source.phot_rp_mean_mag - 0.5*0.41), 4)
     )
-  ) BETWEEN 5 AND 8
+  ) BETWEEN 5 AND 8                        -- so these are the phot. logL values that we include in the end
