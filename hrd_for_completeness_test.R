@@ -31,7 +31,7 @@ dp$logTeff_phot   <- get_logTeff(dp$BP.RP)
 # PLOT DATA
 plot_what <- 'cmd'   # cmd/hrd; Hertzsprung-Russell or Color-Magnitude Diagram?
 
-if (plot_what == 'hrd') {  # HRD
+if (plot_what == 'hrd') { 
   p<- ggplot( ) + 
     geom_point( alpha=0.1, data=dall, aes( x=logTeff_phot, y=logL_abel, color='GAIA phot') )+
     #geom_point( alpha=0.5, color='orange',data=dp,  aes( x=logTeff_phot, y=logL_phot, color='Pauli')) + 
@@ -42,7 +42,7 @@ if (plot_what == 'hrd') {  # HRD
     theme_minimal()
 }
 
-if (plot_what == 'cmd') {  # CMD
+if (plot_what == 'cmd') { 
 p<- ggplot( ) + 
   geom_point( alpha=0.1, data=dall, aes( x=bp_rp, y=phot_bp_mean_mag, color='GAIA') )+
   geom_point( alpha=0.5, data=dp,   aes( x=BP.RP, y=BPmag, color='VFTS')) + 
