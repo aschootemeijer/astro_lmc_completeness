@@ -21,7 +21,7 @@ get_logL <- function(bp_rp, phot_bp_mean_mag) {
 ## LOAD DATA, create a few new columns
 setwd("C:/Users/hp/Desktop/etteren_projects/ASTRO_REST/collaboreren/2025pauli")
 dall <- read.csv('alllmc_logl_4p5plus.csv')  # most complete LMC data
-dp   <- read.csv('VFTS_full_x_DR3.csv')      # subsable, completeness tbd
+dp   <- read.csv('VFTS_full_x_DR3.csv')      # subsamle, completeness tbd
 ##dall$logL_Rabel <- get_logL(dall$bp_rp,dall$phot_bp_mean_mag)  # used to check: identical to ADQL
 dall$logTeff_phot <- get_logTeff(dall$bp_rp)
 dp$logL_phot      <- get_logL(dp$BP.RP,dp$BPmag)
